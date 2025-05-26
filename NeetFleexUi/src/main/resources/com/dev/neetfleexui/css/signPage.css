@@ -1,42 +1,155 @@
-#rootPane {
-    -fx-background-image: url("images/background.png");
+/* NeetFleex CSS Styles */
 
+/* Global styles */
+.root {
+    -fx-background-color: black;
+}
+
+#rootPane {
+    -fx-background-color: black;
+    -fx-background-image: url("images/background.png"); /* Ensure this path is correct */
+    -fx-background-size: cover; /* Added for better background handling */
+    -fx-background-position: center; /* Added */
+    -fx-background-repeat: no-repeat; /* Added */
+}
+
+/* Main container styles */
+#borderPanel {
+    -fx-background-color: transparent; /* Allow rootPane background to show */
+}
+
+#logoImage {
+    -fx-fit-width: 60px;
+    -fx-fit-height: 60px;
+}
+
+/* Header styles */
+#headerBox {
+    -fx-spacing: 15;
+    -fx-alignment: center;
 }
 
 #titleText {
     -fx-fill: white;
+    -fx-font-family: "Montserrat";
+    -fx-font-weight: bold;
     -fx-font-size: 54px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 10, 0.5, 0, 0);
 }
 
+/* Form container styles */
 #formContainer {
-    -fx-background-color: #222222;
+    -fx-background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent black */
     -fx-background-radius: 10px;
-    -fx-padding: 100px;
+    -fx-padding: 30px 40px; /* Consistent padding */
+    -fx-spacing: 15px; /* Spacing between elements in VBox */
+    -fx-max-width: 450px;
+    -fx-min-width: 360px; /* Min width to prevent squishing */
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 0);
 }
 
-TextField, PasswordField {
-    -fx-background-color: #333333;
+/* Welcome text styles */
+#welcomeText {
+    -fx-fill: white;
+    -fx-font-family: "Montserrat";
+    -fx-font-weight: 600; /* Use '600' or 'bold' */
+    -fx-font-size: 24px; /* Adjusted for consistency */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0, 0, 0);
+}
+
+/* Form fields styles */
+.text-field, .password-field {
+    -fx-background-color: rgba(51, 51, 51, 0.9); /* Darker grey, slightly transparent */
     -fx-text-fill: white;
-    -fx-prompt-text-fill: #aaaaaa;
+    -fx-prompt-text-fill: #a0a0a0; /* Lighter grey for prompt */
     -fx-background-radius: 5px;
-    -fx-padding: 10px;
+    -fx-border-color: #404040; /* Subtle border */
+    -fx-border-radius: 5px;
+    -fx-padding: 12px 15px;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 14px;
+    -fx-max-width: 400px; /* Ensure fields don't get too wide */
 }
 
-#signUpButton {
-    -fx-background-color: #e50914;
+.text-field:focused, .password-field:focused {
+    -fx-background-color: rgba(65, 65, 65, 0.9); /* Slightly lighter on focus */
+    -fx-border-color: #e50914; /* Netflix red border on focus */
+}
+
+/* Error field style */
+.error-field {
+    -fx-border-color: red !important; /* Important to override other border styles */
+    -fx-border-width: 1.5px;
+}
+
+/* Error text style */
+.error-text {
+    -fx-fill: #ff4d4d; /* Bright red for errors */
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 12px;
+    -fx-padding: 2px 0 0 5px; /* Small padding for alignment */
+}
+
+
+/* Button styles (login and signup) */
+#loginButton, #signUpButton {
+    -fx-background-color: #e50914; /* Netflix red */
     -fx-text-fill: white;
     -fx-background-radius: 5px;
+    -fx-padding: 12px 20px;
+    -fx-cursor: hand;
+    -fx-font-family: "Montserrat";
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-max-width: 400px; /* Consistent max width */
 }
 
-#signUpButton:hover {
-    -fx-background-color: #b2070d;
+#loginButton:hover, #signUpButton:hover {
+    -fx-background-color: #f40612; /* Slightly brighter red on hover */
+    -fx-effect: dropshadow(gaussian, rgba(229, 9, 20, 0.3), 10, 0, 0, 0);
 }
 
-Hyperlink {
-    -fx-text-fill: #e50914;
+#loginButton:pressed, #signUpButton:pressed {
+    -fx-background-color: #c50812; /* Darker red when pressed */
+}
+
+/* Link styles */
+.hyperlink {
+    -fx-text-fill: #e50914; /* Netflix red */
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    -fx-font-family: "Montserrat";
+    -fx-underline: false;
     -fx-font-weight: bold;
 }
 
-Hyperlink:hover {
+.hyperlink:hover {
+    -fx-text-fill: #f40612; /* Brighter red on hover */
     -fx-underline: true;
+}
+
+/* Sign in/Sign up container */
+#signinContainer { /* Renamed from #signupContainer to match FXML */
+    -fx-alignment: center;
+    -fx-spacing: 10px;
+    -fx-padding: 20px 0 0 0; /* Padding above this HBox */
+}
+
+#signinContainer Text {
+    -fx-fill: #e6e6e6; /* Light grey text */
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 14px;
+}
+
+#signinLink { /* For the "Sign In" hyperlink */
+    -fx-text-fill: #e50914;
+    -fx-font-family: "Montserrat";
+    -fx-font-weight: 600; /* Semi-bold */
+    -fx-font-size: 14px;
+}
+
+/* Scene background to prevent white space if rootPane fails */
+.scene {
+    -fx-background-color: black;
 }
