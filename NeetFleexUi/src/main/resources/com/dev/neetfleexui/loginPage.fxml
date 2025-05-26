@@ -14,20 +14,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane id="rootPane" prefHeight="680.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dev.neetfleexui.controllers.authController">
-   <BorderPane id="borderPanel" stylesheets="@css/loginPage.css">
+<!-- Make sure your root element and BorderPane use the correct CSS -->
+<StackPane id="rootPane" prefHeight="751.0" prefWidth="749.0" stylesheets="@css/loginPage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dev.neetfleexui.controllers.authController">
+   <BorderPane id="borderPanel">
       <top>
          <HBox id="headerBox" alignment="CENTER" BorderPane.alignment="CENTER">
             <padding>
-               <Insets bottom="30.0" top="40.0" />
+               <Insets bottom="25.0" top="40.0" />
             </padding>
             <ImageView id="logoImage" fitHeight="75.0" fitWidth="75.0" preserveRatio="true">
-
-                  <Image url="@css/images/netflix-logo.png" />
-
+               <Image url="@css/images/netflix-logo.png" /> <!-- Ensure path is correct -->
             </ImageView>
-
-            <Text id="titleText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="NeetFleex">
+            <Text id="titleText" fill="WHITE" text="NeetFleex">
                <font>
                   <Font name="Montserrat Bold" size="54.0" />
                </font>
@@ -35,58 +33,67 @@
          </HBox>
       </top>
       <center>
-         <VBox id="formContainer" alignment="CENTER" maxHeight="-Infinity" maxWidth="450.0" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" BorderPane.alignment="CENTER">
+         <!-- VBox for the login form -->
+         <VBox id="formContainer" alignment="CENTER" maxHeight="-Infinity" maxWidth="487.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="473.0" spacing="5.0" BorderPane.alignment="CENTER">
             <padding>
-               <Insets bottom="30.0" left="40.0" right="40.0" top="30.0" />
+               <Insets top="20.0" bottom="20.0" left="40.0" right="40.0" />
             </padding>
-            <Text id="welcomeText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome back">
+            <Text id="welcomeText" fill="WHITE" text="Sign In">
                <font>
-                  <Font name="Montserrat SemiBold" size="24.0" />
-               </font>
-            </Text>
-            <Text id="subtitleText" fill="#e6e6e6" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign in to continue watching">
-               <font>
-                  <Font name="Montserrat Regular" size="16.0" />
+                  <Font size="32.0" />
                </font>
                <VBox.margin>
                   <Insets bottom="15.0" />
                </VBox.margin>
             </Text>
-            <TextField id="loginField" fx:id="login" maxWidth="400.0" promptText="Email or username">
+
+            <TextField fx:id="login" promptText="Username or Email" maxWidth="400.0">
                <font>
                   <Font name="Montserrat Regular" size="14.0" />
                </font>
             </TextField>
-            <PasswordField id="passwordField" fx:id="password" maxWidth="400.0" promptText="Password">
+            <!-- Error Text for login field -->
+            <Text fx:id="loginFieldErrorText" styleClass="error-text" managed="false" visible="false" />
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin>
+
+            <PasswordField fx:id="password" promptText="Password" maxWidth="400.0">
                <font>
                   <Font name="Montserrat Regular" size="14.0" />
                </font>
             </PasswordField>
-            <HBox alignment="CENTER_RIGHT">
-               <Hyperlink id="forgotLink" text="Forgot password?">
-                  <font>
-                     <Font name="Montserrat Regular" size="12.0" />
-                  </font>
-               </Hyperlink>
-            </HBox>
-            <Button id="loginButton" fx:id="logButton" maxWidth="400.0" mnemonicParsing="false" onMouseClicked="#loginHandler" text="Sign In">
+            <!-- Error Text for password field -->
+            <Text fx:id="passwordFieldErrorText" styleClass="error-text" managed="false" visible="false" />
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin>
+
+            <!-- General error message area for login (e.g., invalid credentials) -->
+            <Text fx:id="generalLoginErrorText" styleClass="error-text" managed="false" visible="false" />
+            <VBox.margin>
+               <Insets bottom="10.0" /> <!-- Space before button -->
+            </VBox.margin>
+
+            <Button fx:id="loginButton" text="Sign In" onMouseClicked="#loginHandler" maxWidth="400.0">
                <font>
                   <Font name="Montserrat Bold" size="14.0" />
                </font>
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets top="15.0" />
                </VBox.margin>
             </Button>
-            <HBox id="signupContainer" alignment="CENTER" spacing="10.0">
+
+            <HBox id="signupPromptContainer" alignment="CENTER" spacing="10.0">
                <padding>
                   <Insets top="20.0" />
                </padding>
-               <Text fill="#e6e6e6" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account?">
+               <Text fill="#e6e6e6" text="New to NeetFleex?">
                   <font>
                      <Font name="Montserrat Regular" size="14.0" />
                   </font>
                </Text>
-               <Hyperlink id="signupLink" fx:id="signButton" onAction="#handleSignUp" text="Sign up">
+               <Hyperlink id="signUpLink" text="Sign up now" onAction="#handleSignUp">
                   <font>
                      <Font name="Montserrat SemiBold" size="14.0" />
                   </font>

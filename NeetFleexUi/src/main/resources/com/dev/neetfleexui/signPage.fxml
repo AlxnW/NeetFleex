@@ -22,7 +22,7 @@
                     <Insets bottom="25.0" top="40.0" />
                 </padding>
                 <ImageView id="logoImage" fitHeight="75.0" fitWidth="75.0" preserveRatio="true">
-                    <Image url="@css/images/netflix-logo.png" />
+                    <Image url="@css/images/netflix-logo.png" /> <!-- Make sure this path is correct -->
                 </ImageView>
                 <Text id="titleText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="NeetFleex">
                     <font>
@@ -32,37 +32,72 @@
             </HBox>
         </top>
         <center>
-            <VBox id="formContainer" alignment="CENTER" maxHeight="-Infinity" maxWidth="487.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="554.0" prefWidth="473.0" spacing="25.0" BorderPane.alignment="CENTER">
+            <VBox id="formContainer" alignment="CENTER" maxHeight="-Infinity" maxWidth="487.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="473.0" spacing="5.0" BorderPane.alignment="CENTER"> <!-- Reduced spacing to accommodate error texts -->
+                <padding>
+                    <Insets top="20.0" bottom="20.0" left="40.0" right="40.0" /> <!-- Adjusted padding -->
+                </padding>
                 <Text id="welcomeText" fill="WHITE" text="Create an account">
                     <font>
-                        <Font size="36.0" />
+                        <Font size="32.0" /> <!-- Slightly smaller for better fit -->
                     </font>
+                    <VBox.margin>
+                        <Insets bottom="15.0" />
+                    </VBox.margin>
                 </Text>
+
                 <TextField id="usernameField" fx:id="login" maxWidth="400.0" promptText="Username">
                     <font>
                         <Font name="Montserrat Regular" size="14.0" />
                     </font>
                 </TextField>
+                <Text fx:id="usernameErrorText" styleClass="error-text" managed="false" visible="false" />
+
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+
                 <TextField id="emailField" fx:id="email" maxWidth="400.0" promptText="Email">
                     <font>
                         <Font name="Montserrat Regular" size="14.0" />
                     </font>
                 </TextField>
+                <Text fx:id="emailErrorText" styleClass="error-text" managed="false" visible="false" />
+
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+
                 <PasswordField id="passwordField" fx:id="password" maxWidth="400.0" promptText="Password">
                     <font>
                         <Font name="Montserrat Regular" size="14.0" />
                     </font>
                 </PasswordField>
+                <Text fx:id="passwordErrorText" styleClass="error-text" managed="false" visible="false" />
+
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+
                 <PasswordField id="confirmPasswordField" fx:id="confirmPassword" maxWidth="400.0" promptText="Confirm Password">
                     <font>
                         <Font name="Montserrat Regular" size="14.0" />
                     </font>
                 </PasswordField>
+                <Text fx:id="confirmPasswordErrorText" styleClass="error-text" managed="false" visible="false" />
+
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+
                 <Button id="signUpButton" fx:id="signUpButton" maxWidth="400.0" mnemonicParsing="false" onMouseClicked="#signHandler" text="Sign Up">
                     <font>
                         <Font name="Montserrat Bold" size="14.0" />
                     </font>
+                    <VBox.margin>
+                        <Insets top="15.0" />
+                    </VBox.margin>
                 </Button>
+
                 <HBox id="signinContainer" alignment="CENTER" spacing="10.0">
                     <padding>
                         <Insets top="20.0" />
@@ -78,9 +113,9 @@
                         </font>
                     </Hyperlink>
                 </HBox>
-            <opaqueInsets>
-               <Insets />
-            </opaqueInsets>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
             </VBox>
         </center>
     </BorderPane>
