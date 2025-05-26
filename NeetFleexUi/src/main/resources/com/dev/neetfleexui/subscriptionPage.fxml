@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.FlowPane?> <!-- Added FlowPane import -->
+
+<BorderPane fx:id="subscriptionContainer" styleClass="background" stylesheets="@css/subscriptionPage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dev.neetfleexui.controllers.SubscriptionController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="navbar">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+            <Label styleClass="logo" text="NeetFleex" />
+            <HBox alignment="CENTER_RIGHT" spacing="15" HBox.hgrow="ALWAYS">
+                <Button styleClass="nav-btn" text="Înapoi" />
+            </HBox>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox alignment="TOP_CENTER" spacing="25"> <!-- Reduced spacing -->
+                <padding>
+                    <!-- Reduced top and bottom padding -->
+                    <Insets bottom="20" left="40" right="40" top="20" />
+                </padding>
+
+                <!-- Page Title -->
+                <VBox alignment="CENTER" styleClass="header-section">
+                    <Label styleClass="page-title" text="Alege-ți abonamentul" />
+                    <Label styleClass="subtitle" text="Vizionează nelimitat. Anulează oricând." />
+                </VBox>
+
+                <!-- Plans Section -->
+                <VBox styleClass="plans-section" alignment="CENTER">
+                    <fx:define>
+                        <ToggleGroup fx:id="planToggleGroup" />
+                    </fx:define>
+                    <!-- Changed HBox to FlowPane for responsiveness -->
+                    <FlowPane fx:id="plansFlowPane" alignment="CENTER" hgap="20" vgap="20" prefWrapLength="900">
+                        <!-- Basic Plan -->
+                        <VBox fx:id="basicPlanCard" styleClass="plan-card">
+                            <RadioButton fx:id="basicPlanRadio" styleClass="plan-radio" text="" toggleGroup="$planToggleGroup" />
+                            <Label styleClass="plan-name" text="Basic" />
+                            <Label styleClass="plan-price" text="7.99€/lună" />
+                            <Separator />
+                            <VBox styleClass="plan-features">
+                                <Label text="• Rezoluție bună (720p)" />
+                                <Label text="• Vizionare pe 1 ecran" />
+                                <Label text="• Fără reclame" />
+                                <Label text="• Acces la toate filmele" />
+                            </VBox>
+                        </VBox>
+
+                        <!-- Premium Plan -->
+                        <!-- Initial selected plan, style class and radio button selected state should match -->
+                        <VBox fx:id="premiumPlanCard" styleClass="plan-card, selected-plan">
+                            <RadioButton fx:id="premiumPlanRadio" selected="true" styleClass="plan-radio" text="" toggleGroup="$planToggleGroup" />
+                            <HBox styleClass="popular-tag">
+                                <Label text="POPULAR" />
+                            </HBox>
+                            <Label styleClass="plan-name" text="Premium" />
+                            <Label styleClass="plan-price" text="12.99€/lună" />
+                            <Separator />
+                            <VBox styleClass="plan-features">
+                                <Label text="• Rezoluție excelentă (4K+HDR)" />
+                                <Label text="• Vizionare pe 2 ecrane" />
+                                <Label text="• Fără reclame" />
+                                <Label text="• Acces la toate filmele" />
+                                <Label text="• Descărcări offline" />
+                            </VBox>
+                        </VBox>
+
+                        <!-- Family Plan -->
+                        <VBox fx:id="familyPlanCard" styleClass="plan-card">
+                            <RadioButton fx:id="familyPlanRadio" styleClass="plan-radio" text="" toggleGroup="$planToggleGroup" />
+                            <Label styleClass="plan-name" text="Family" />
+                            <Label styleClass="plan-price" text="16.99€/lună" />
+                            <Separator />
+                            <VBox styleClass="plan-features">
+                                <Label text="• Rezoluție excelentă (4K+HDR)" />
+                                <Label text="• Vizionare pe 4 ecrane" />
+                                <Label text="• Fără reclame" />
+                                <Label text="• Acces la toate filmele" />
+                                <Label text="• Descărcări offline" />
+                                <Label text="• Profiluri pentru copii" />
+                            </VBox>
+                        </VBox>
+                    </FlowPane>
+                </VBox>
+
+                <!-- Grouping Payment Details, Subscribe Button, and Disclaimer -->
+                <VBox alignment="CENTER" spacing="20">
+                    <!-- Payment Details Section -->
+                    <VBox styleClass="payment-section" alignment="CENTER"> <!-- Added alignment to center title and card HBox -->
+                        <Label styleClass="section-title" text="Detalii plată" />
+                        <HBox alignment="CENTER"> <!-- Wrapper HBox to center the payment card -->
+                            <VBox styleClass="payment-card" maxWidth="700"> <!-- Added maxWidth to payment-card VBox -->
+                                <GridPane hgap="20" vgap="15">
+                                    <columnConstraints>
+                                        <ColumnConstraints percentWidth="50" />
+                                        <ColumnConstraints percentWidth="50" />
+                                    </columnConstraints>
+
+                                    <Label text="Nume complet" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                    <TextField fx:id="fullNameField" promptText="Introdu numele complet" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+                                    <Label text="Email" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                    <TextField fx:id="emailField" promptText="email@exemplu.com" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                    <Label text="Număr card" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                    <TextField fx:id="cardNumberField" promptText="1234 5678 9012 3456" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+
+                                    <HBox spacing="20" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                        <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                            <Label text="Data expirării" />
+                                            <HBox spacing="5">
+                                                <ComboBox fx:id="expiryMonthCombo" prefWidth="70" promptText="LL" /> <!-- Adjusted prefWidth slightly -->
+                                                <ComboBox fx:id="expiryYearCombo" prefWidth="90" promptText="AAAA" /> <!-- Adjusted prefWidth slightly -->
+                                            </HBox>
+                                        </VBox>
+
+                                        <VBox spacing="5">
+                                            <Label text="CVV" />
+                                            <TextField fx:id="cvvField" prefWidth="70" promptText="123" /> <!-- Adjusted prefWidth slightly -->
+                                        </VBox>
+                                    </HBox>
+
+                                    <CheckBox fx:id="termsCheckbox" text="Accept termenii și condițiile" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                                </GridPane>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+
+                    <!-- Subscribe Button -->
+                    <Button fx:id="subscribeButton" onMouseClicked="#subscribe" styleClass="subscribe-btn" text="Abonează-te acum" />
+
+                    <Label styleClass="disclaimer" text="Plata va fi procesată imediat. Poți anula abonamentul oricând." />
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" styleClass="footer">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+            <Label text="© 2025 NeetFleex. Toate drepturile rezervate." />
+        </HBox>
+    </bottom>
+</BorderPane>

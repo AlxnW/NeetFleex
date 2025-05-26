@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane styleClass="main-container" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dev.neetfleexui.controllers.MovieDetailsController">
+
+    <top>
+        <!-- Navbar -->
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="navbar">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+            <Label styleClass="logo" text="NeetFleex" />
+            <HBox alignment="CENTER_LEFT" spacing="15" HBox.hgrow="ALWAYS">
+                <!-- Make sure the onMouseClicked matches controller method signature -->
+                <Label onMouseClicked="#switchToHome" styleClass="nav-item" text="Acasă" />
+                <Label styleClass="nav-item" text="Filme" />
+                <Label styleClass="nav-item" text="Seriale" />
+                <Label styleClass="nav-item" text="Noutăți" />
+                <Label styleClass="nav-item" text="Lista Mea" />
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" spacing="15">
+                <TextField promptText="Caută" styleClass="search-field" />
+                <Button styleClass="notification-btn" text="🔔" />
+                <MenuButton styleClass="user-menu" text="Profil">
+                    <items>
+                        <MenuItem text="Contul meu" />
+                        <MenuItem text="Setări" />
+                        <SeparatorMenuItem />
+                        <MenuItem text="Deconectare" />
+                    </items>
+                </MenuButton>
+            </HBox>
+        </HBox>
+    </top>
+
+    <center>
+        <!-- ScrollPane configuration -->
+        <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="content-scroll" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+            <!-- VBox containing center content -->
+            <VBox spacing="0" styleClass="content-container" alignment="TOP_LEFT">
+                <!-- Hero Section StackPane -->
+                <!-- Background image will be set via CSS on this StackPane -->
+                <StackPane fx:id="heroSection" styleClass="hero-section" VBox.vgrow="ALWAYS">
+                    <!-- ImageView REMOVED -->
+
+                    <!-- Foreground Content VBox -->
+                    <VBox alignment="BOTTOM_LEFT" styleClass="hero-content">
+                        <padding>
+                            <Insets bottom="40" left="40" right="40" top="40" />
+                        </padding>
+
+                        <!-- Content Title (Matches controller variable: contentTitle) -->
+                        <Label fx:id="contentTitle" styleClass="movie-title" text="Title Loading..."/>
+
+                        <!-- Metadata FlowPane (Matches controller variable: contentMetaPane) -->
+                        <FlowPane fx:id="contentMetaPane" styleClass="movie-meta" hgap="10" vgap="5">
+                            <padding>
+                                <Insets top="10" bottom="20"/>
+                            </padding>
+                            <!-- Labels matching controller variables (metaYear, metaGenre, metaDirector) -->
+                            <Label fx:id="metaYear" styleClass="meta-label" text="Year..." />
+                            <Label fx:id="metaGenre" styleClass="meta-label" text="Genre..." /> <!-- Added -->
+                            <Label fx:id="metaDirector" styleClass="meta-label" text="Director..." /> <!-- Added -->
+                            <!-- Removed metaRating and metaDuration as they weren't in the controller -->
+                        </FlowPane>
+
+                        <!-- Action Buttons HBox -->
+                        <HBox spacing="10" styleClass="action-buttons">
+                            <!-- Added fx:id="playButton" to match controller variable -->
+                            <Button fx:id="playButton" onAction="#handlePlay" styleClass="button, play-button" text="▶ Play" />
+                            <!-- These matched already -->
+                            <ToggleButton fx:id="likeButton" onAction="#handleLike" styleClass="button, icon-button" text="👍" />
+                            <ToggleButton fx:id="addToListButton" onAction="#handleAddToList" styleClass="button, icon-button" text="+" />
+                        </HBox>
+                    </VBox>
+                </StackPane>
+
+                <!-- Other content sections would go here -->
+                <VBox spacing="10" styleClass="details-section">
+                    <padding>
+                        <Insets top="20" right="40" bottom="20" left="40" />
+                    </padding>
+                    <!-- Content Description (Matches controller variable: contentDescription) -->
+                    <Label fx:id="contentDescription" text="Description loading..." styleClass="description-text" wrapText="true"/>
+                    <!-- Add more sections for Cast, More Like This, etc. -->
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

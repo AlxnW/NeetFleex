@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="mainContainer" styleClass="background" stylesheets="@css/mainPage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dev.neetfleexui.controllers.MainController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="navbar">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+            <Label styleClass="logo" text="NeetFleex" />
+            <HBox alignment="CENTER_LEFT" spacing="15" HBox.hgrow="ALWAYS">
+                <Label styleClass="nav-item" text="Acasă" />
+
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" spacing="15">
+                <TextField promptText="Caută" styleClass="search-field" />
+                <Button styleClass="notification-btn" text="🔔" />
+                <MenuButton styleClass="user-menu" text="Profil">
+                    <items>
+
+                        <MenuItem onAction="#logout" text="Deconectare" />
+                    </items>
+                </MenuButton>
+            </HBox>
+        </HBox>
+    </top>
+
+    <center>
+        <!-- Main vertical scroll pane for the entire center content -->
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="content-area">
+            <VBox spacing="30">
+                <padding>
+                    <Insets bottom="20" left="20" right="20" top="20" />
+                </padding>
+
+                <!-- Featured Content -->
+                <VBox styleClass="featured-section">
+                    <Label styleClass="section-title" text="Recomandate pentru tine" />
+                    <StackPane fx:id="featuredContentContainer" styleClass="featured-content">
+                        <ImageView fx:id="featuredImage" fitHeight="400" fitWidth="1200" preserveRatio="true" />
+                        <VBox alignment="BOTTOM_LEFT" styleClass="featured-info">
+                            <Label fx:id="featuredTitle" styleClass="featured-title" text="Titlu Film Popular" />
+                            <HBox spacing="10">
+                                <Button styleClass="play-btn" text="▶ Redare" />
+                                <Button styleClass="info-btn" text="ℹ Mai multe informații" />
+                            </HBox>
+                        </VBox>
+                    </StackPane>
+                </VBox>
+
+                <!-- Popular Movies -->
+                <VBox styleClass="content-section">
+                    <Label styleClass="section-title" text="Filme populare" />
+                    <!-- Added fx:id to reference from controller -->
+                    <ScrollPane fx:id="popularMoviesScrollPane" hbarPolicy="ALWAYS" styleClass="horizontal-scroll" vbarPolicy="NEVER">
+                        <HBox fx:id="popularMoviesContainer" spacing="10" styleClass="content-row" />
+                    </ScrollPane>
+                </VBox>
+
+                <!-- Popular Series -->
+                <VBox styleClass="content-section">
+                    <Label styleClass="section-title" text="Seriale populare" />
+                    <!-- Added fx:id to reference from controller -->
+                    <ScrollPane fx:id="popularSeriesScrollPane" hbarPolicy="ALWAYS" styleClass="horizontal-scroll" vbarPolicy="NEVER">
+                        <HBox fx:id="popularSeriesContainer" spacing="10" styleClass="content-row" />
+                    </ScrollPane>
+                </VBox>
+
+                <!-- Continue Watching -->
+                <VBox styleClass="content-section">
+                    <Label styleClass="section-title" text="Continuă vizionarea" />
+                    <!-- Added fx:id to reference from controller -->
+                    <ScrollPane fx:id="continueWatchingScrollPane" hbarPolicy="ALWAYS" styleClass="horizontal-scroll" vbarPolicy="NEVER">
+                        <HBox fx:id="continueWatchingContainer" spacing="10" styleClass="content-row" />
+                    </ScrollPane>
+                </VBox>
+
+                <!-- My List -->
+                <VBox styleClass="content-section">
+                    <Label styleClass="section-title" text="Lista mea" />
+                    <!-- Added fx:id to reference from controller -->
+                    <ScrollPane fx:id="myListScrollPane" hbarPolicy="ALWAYS" styleClass="horizontal-scroll" vbarPolicy="NEVER">
+                        <HBox fx:id="myListContainer" spacing="10" styleClass="content-row" />
+                    </ScrollPane>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" styleClass="footer">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+            <Label text="© 2025 FilmFlix. Toate drepturile rezervate." />
+        </HBox>
+    </bottom>
+</BorderPane>

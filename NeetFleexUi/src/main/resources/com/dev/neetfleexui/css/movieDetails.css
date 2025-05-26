@@ -1,0 +1,193 @@
+/* Movie Details Page Styles */
+.background {
+    -fx-background-color: #141414;
+}
+
+/* Navbar Styles */
+.navbar {
+    -fx-background-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.0));
+    -fx-padding: 10px;
+    -fx-min-height: 60px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    -fx-z-index: 1000;
+}
+
+.logo {
+    -fx-text-fill: #E50914;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.back-button {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.back-button:hover {
+    -fx-opacity: 0.8;
+}
+
+.notification-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-font-size: 18px;
+}
+
+.user-menu {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+/* Content Area */
+.content-area {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.content-area .viewport {
+    -fx-background-color: transparent;
+}
+
+.content-area > .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 5;
+}
+
+.content-area > .scroll-bar:vertical .thumb {
+    -fx-background-color: #555555;
+    -fx-background-radius: 5px;
+}
+
+/* Background Image */
+.background-image {
+    -fx-fit-width: 1280px;
+    -fx-fit-height: 800px;
+}
+
+/* Gradient Overlay */
+.gradient-overlay {
+    -fx-background-color: linear-gradient(to top, rgba(20, 20, 20, 1) 0%, rgba(20, 20, 20, 0.8) 30%, rgba(20, 20, 20, 0.4) 60%, rgba(20, 20, 20, 0.3) 100%);
+    -fx-min-height: 800px;
+    -fx-min-width: 1280px;
+}
+
+/* Movie Title */
+.movie-title {
+    -fx-text-fill: white;
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Arial";
+}
+
+/* Match Percentage */
+.match-percentage {
+    -fx-text-fill: #46D369;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Meta Labels */
+.meta-label {
+    -fx-text-fill: #999999;
+    -fx-font-size: 14px;
+}
+
+.meta-tag {
+    -fx-text-fill: #999999;
+    -fx-font-size: 14px;
+    -fx-border-color: #999999;
+    -fx-border-width: 1px;
+    -fx-padding: 2px 5px;
+}
+
+.quality-tag {
+    -fx-text-fill: #999999;
+    -fx-font-size: 12px;
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-padding: 2px 5px;
+    -fx-background-radius: 3px;
+}
+
+/* Movie Description */
+.movie-description {
+    -fx-text-fill: #DDDDDD;
+    -fx-font-size: 16px;
+    -fx-line-spacing: 5px;
+}
+
+/* Action Buttons */
+.play-btn {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 25px;
+    -fx-cursor: hand;
+    -fx-background-radius: 4px;
+    -fx-font-size: 16px;
+}
+
+.play-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.85);
+}
+
+.secondary-btn {
+    -fx-background-color: rgba(109, 109, 110, 0.7);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-background-radius: 4px;
+    -fx-font-size: 14px;
+}
+
+.secondary-btn:hover {
+    -fx-background-color: rgba(109, 109, 110, 0.9);
+}
+
+.icon-btn {
+    -fx-background-color: rgba(42, 42, 42, 0.7);
+    -fx-text-fill: white;
+    -fx-padding: 8px 12px;
+    -fx-cursor: hand;
+    -fx-background-radius: 50%;
+    -fx-font-size: 14px;
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-max-width: 40px;
+    -fx-max-height: 40px;
+}
+
+.icon-btn:hover {
+    -fx-background-color: rgba(42, 42, 42, 0.9);
+}
+
+/* Movie Info */
+.info-label {
+    -fx-text-fill: #999999;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.info-value {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+/* Scroll Bars */
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #555555;
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar:vertical .track,
+.scroll-bar:horizontal .track {
+    -fx-background-color: transparent;
+}

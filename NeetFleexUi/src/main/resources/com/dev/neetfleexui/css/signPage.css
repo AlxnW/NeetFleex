@@ -1,0 +1,42 @@
+#rootPane {
+    -fx-background-image: url("images/background.png");
+
+}
+
+#titleText {
+    -fx-fill: white;
+    -fx-font-size: 54px;
+}
+
+#formContainer {
+    -fx-background-color: #222222;
+    -fx-background-radius: 10px;
+    -fx-padding: 100px;
+}
+
+TextField, PasswordField {
+    -fx-background-color: #333333;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #aaaaaa;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+}
+
+#signUpButton {
+    -fx-background-color: #e50914;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+}
+
+#signUpButton:hover {
+    -fx-background-color: #b2070d;
+}
+
+Hyperlink {
+    -fx-text-fill: #e50914;
+    -fx-font-weight: bold;
+}
+
+Hyperlink:hover {
+    -fx-underline: true;
+}
