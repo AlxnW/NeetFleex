@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="15ead804-9709-42ba-a8b6-81bd71182eb2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/NeetFlexApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/config/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/controller/AuthenticationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/controller/ContentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/controller/SubscriptionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/dto/ContentResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/dto/ContentUpdateDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/dto/MovieDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/dto/RequestDetailsForSubscription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/dto/SeriesDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/dto/response/LoginResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/dto/response/RequestDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/enums/ContentType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/enums/SubscriptionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/contents/Content.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/contents/Episode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/contents/Movie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/contents/Series.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/player/AviPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/player/IVideoPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/player/MkvPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/player/Mp4Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/substitles/ISubtitle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/substitles/SubtitleSrt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/substitles/SubtitleSsa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/substitles/SubtitleSub.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/user/Playback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/user/PlaybackContent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/user/RecommendationSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/user/Review.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/user/Subscription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/user/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/user/Watchlist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/model/user/WatchlistContent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/FactoryMethodImpl/AviVideoPlayerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/FactoryMethodImpl/MkvVideoPlayerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/FactoryMethodImpl/Mp4VideoPlayerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/FactoryMethodImpl/SubscriptionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/FactoryMethodImpl/VideoPlayerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/adapter/ContentProviderExternal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/adapter/ContentProviderExternalAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/adapter/ContentProviderLocal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/adapter/IContentProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/bridge/abstraction/FamilySubscriptionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/bridge/abstraction/PremiumSubscriptionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/bridge/abstraction/StandardSubscriptionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/bridge/abstraction/SubscriptionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/bridge/impl/BasicSubscriptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/bridge/impl/FamilySubscriptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/bridge/impl/ISubscriptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/bridge/impl/PremiumSubscriptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/builder/Director.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/builder/IBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/builder/StreamingRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/builder/StreamingRequestBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/command/ActionInvoker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/command/AddToPlaybackCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/command/AddToWatchlistCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/command/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/command/RemoveFromPlaylistCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/command/RemoveFromWatchlistCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/composite/MediaComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/composite/Playlist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/decorator/BasicSubscription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/decorator/ISubscription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/decorator/MultipleDeviceDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/decorator/OfflineViewingDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/decorator/SubscriptionDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/decorator/UHDStreamingDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/facade/FavoritesManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/facade/HistoryManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/facade/ProfileManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/facade/SettingsManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/facade/UserProfileFacade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/factories/AviMediaFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/factories/IMediaFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/factories/MkvMediaFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/factories/Mp4MediaFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/flyweight/SharedVideo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/flyweight/VideoFlyweight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/flyweight/VideoFlyweightFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/iterator/Iterator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/iterator/IteratorUsage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/iterator/SeriesEpisodeIterator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/memento/PlaybackHistoryCaretaker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/memento/PlaybackMemento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/memento/PlaybackSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/observer/ContentManagementService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/observer/ContentObserver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/observer/ContentSubject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/observer/EmailNotifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/observer/InAppNotifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/prototype/IPrototype.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/singleton/VideoPlayerSingleton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/strategy/GenreBasedStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/strategy/PopularityBasedStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/strategy/RecommendationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/strategy/RecommendationStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/proxy/RealStreamingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/proxy/StreamingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/proxy/StreamingServiceProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/repositories/MovieRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/repositories/PlaybackContentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/repositories/PlaybackRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/repositories/SeriesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/repositories/SubscriptionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/repositories/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/repositories/WatchlistContentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/service/AuthenticationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/service/impl/AuthenticationServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/service/impl/ContentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/service/impl/JwtServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/service/impl/ObjectMapperDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/service/impl/SubscriptionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/service/impl/TokenExtractServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/service/impl/UserExtractServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/service/impl/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/service/impl/VideoPlayerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/util/IPlayable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neetflex/util/IRecommendationStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/adolescense.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/amateru.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/anora-md-web.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/baywatch.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/chuxj.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/companion.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/countdown.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/dunkrik.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/emialia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/eternaut.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/f1-insta-announce-1936x1936-dom-1720221068780.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/flow.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/freakie.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/friendship.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/loked.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/loop.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/mobland.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/nocountry.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/nun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/opus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/pejudice.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/retribution.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/robot.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/the accaunt 2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/movies/image/trap.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Alias Grace   Official Trailer [HD]   Netflix.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Archive 81   Official Trailer   Netflix.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/BREAKING BAD Season 5 - Official Trailer (2021).mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Breaking Bad Extended Trailer Season 2 (HD).mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Breaking Bad Season 4 Trailer.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Breaking Bad Trailer (First Season).mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Breaking Bad Unofficial Trailer (Third Season).mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Chernobyl (2019)   Official Trailer   HBO.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Colin in Black and White - Official Trailer  - Netflix.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Devs (Hulu) Trailer HD - Nick Offerman, Sonoya Mizuno series.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Godless Season 1 Trailer   Rotten Tomatoes TV.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/MR. ROBOT Season 3 Official Trailer (2017) Rami Malek TV Show HD.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Maniac   Official Trailer   Netflix.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Midnight Mass   Teaser Trailer   Netflix.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Mr. Robot - Launch Trailer   Prime Video.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Mr. Robot Season 2 Trailer (HD).mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Mr. Robot Season 4 Trailer   'A Showdown Between Elliot &amp; Whiterose'   Rotten Tomatoes TV.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Raised By Wolves - Official Trailer (2020) Ridley Scott.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/SHARP OBJECTS Official Trailer (NEW 2018) Amy Adams, Sophia Lillis TV Series HD.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Shantaram — Official Trailer   Apple TV+.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/THE UNDOING Official Trailer (2020) Hugh Grant, Nicole Kidman, HBO Series.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/The Bastard Son &amp; The Devil Himself   Official Trailer   Netflix.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/The English - Official Trailer   Prime Video.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/The Haunting of Bly Manor - Official Trailer.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/The Night Of - Trailer - Official HBO UK.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/The Queen's Gambit Limited Series Trailer   Rotten Tomatoes TV.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Watchmen (2009) Official Trailer - Zac Snyder Superhero Movie HD.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/When They See Us Limited Series   Teaser [HD]   Netflix.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/Y THE LAST MAN Trailer (2021).mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/Colin in Black and White.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/Devs.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/Godless.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/Maniac.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/Midnight Mass.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/Mr. Robot.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/Raised By Wolves.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/SHARP OBJECTS.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/Shantaram.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/THE LAST MAN .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/THE UNDOING.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/The English.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/The Haunting of Bly Manor.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/The Night Of.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/Watchmen.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/aliasgrace.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/archive81.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/brakingbad.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/chernobyl.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/he Bastard Son &amp; The Devil Himself.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/hen They See Us.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/series/image/queensgambit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/neetflex/NeetFlexApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2sabkEF8GoaiWl6U2xv4qelpx5z" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.NeetFlexApplication | #1.executor&quot;: &quot;Run&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Database detector&quot;: &quot;Database detector&quot;,
+    &quot;Notification.DoNotAsk-Database detector&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.NeetFlexApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Anul 3/Simestrul 2/PR&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.neetflex.dto" />
+      <recent name="com.example.neetflex.model" />
+      <recent name="com.example.neetflex.facade" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sbogd\IdeaProjects\NeetFlex\src\main\java\com\example\neetflex\dto" />
+      <recent name="C:\Users\sbogd\IdeaProjects\NeetFlex\src\main\java\com\example\neetflex\repository\interfaces" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sbogd\IdeaProjects\NeetFlex\src\main\resources\static\movies\image" />
+      <recent name="C:\Users\sbogd\IdeaProjects\NeetFlex\src\main\resources\static\series\image" />
+      <recent name="C:\Users\sbogd\IdeaProjects\NeetFlex\src\main\resources\static\" />
+      <recent name="C:\Users\sbogd\IdeaProjects\NeetFlex\src\main\resources\static\movies" />
+      <recent name="C:\Users\sbogd\IdeaProjects\NeetFlex\src\main\resources\static\movies\series" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.neetflex.repositories" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.NeetFlexApplication">
+    <configuration name="NeetFlexApplication | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/NeetFlexApplication.http" executionIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="NeetFlexApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="NeetFlex" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.neetflex.NeetFlexApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.NeetFlexApplication | #1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="15ead804-9709-42ba-a8b6-81bd71182eb2" name="Changes" comment="" />
+      <created>1738696773984</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1738696773984</updated>
+      <workItem from="1738696775119" duration="1005000" />
+      <workItem from="1738697792347" duration="7857000" />
+      <workItem from="1738776530139" duration="102000" />
+      <workItem from="1738850889380" duration="2993000" />
+      <workItem from="1738929922959" duration="15295000" />
+      <workItem from="1739368614802" duration="5523000" />
+      <workItem from="1739564111033" duration="86000" />
+      <workItem from="1739865714364" duration="6552000" />
+      <workItem from="1739890210519" duration="146000" />
+      <workItem from="1739972589732" duration="756000" />
+      <workItem from="1740404634967" duration="30000" />
+      <workItem from="1740743267267" duration="8452000" />
+      <workItem from="1740832981554" duration="72000" />
+      <workItem from="1740841464664" duration="9000" />
+      <workItem from="1740841485578" duration="5357000" />
+      <workItem from="1741080826049" duration="9917000" />
+      <workItem from="1741261213510" duration="12000" />
+      <workItem from="1741625246165" duration="4412000" />
+      <workItem from="1741637622805" duration="10314000" />
+      <workItem from="1741692938202" duration="9362000" />
+      <workItem from="1741725138980" duration="1510000" />
+      <workItem from="1741866163376" duration="477000" />
+      <workItem from="1741956334808" duration="807000" />
+      <workItem from="1741975668936" duration="62000" />
+      <workItem from="1741991105346" duration="1969000" />
+      <workItem from="1742040302496" duration="492000" />
+      <workItem from="1742138162167" duration="199000" />
+      <workItem from="1742155219843" duration="2135000" />
+      <workItem from="1742207914587" duration="3398000" />
+      <workItem from="1742221754619" duration="762000" />
+      <workItem from="1742243841903" duration="6606000" />
+      <workItem from="1742251817543" duration="42000" />
+      <workItem from="1742297733391" duration="11692000" />
+      <workItem from="1742419668053" duration="3376000" />
+      <workItem from="1742823476155" duration="2945000" />
+      <workItem from="1742849737010" duration="5333000" />
+      <workItem from="1742856548845" duration="179000" />
+      <workItem from="1742902784447" duration="13259000" />
+      <workItem from="1743020825272" duration="6785000" />
+      <workItem from="1743287665694" duration="1938000" />
+      <workItem from="1743332327428" duration="6213000" />
+      <workItem from="1743424208874" duration="2062000" />
+      <workItem from="1743427888881" duration="10768000" />
+      <workItem from="1743504820792" duration="7562000" />
+      <workItem from="1743598892482" duration="1321000" />
+      <workItem from="1743680247800" duration="1793000" />
+      <workItem from="1743765348721" duration="1494000" />
+      <workItem from="1743885733095" duration="3607000" />
+      <workItem from="1743969598839" duration="3301000" />
+      <workItem from="1744021916249" duration="5645000" />
+      <workItem from="1744028836373" duration="1164000" />
+      <workItem from="1744050870891" duration="8325000" />
+      <workItem from="1744062885263" duration="610000" />
+      <workItem from="1744213887352" duration="3970000" />
+      <workItem from="1744288731749" duration="3856000" />
+      <workItem from="1744367818395" duration="1159000" />
+      <workItem from="1744491736762" duration="609000" />
+      <workItem from="1744633430568" duration="1000" />
+      <workItem from="1744661428754" duration="4000" />
+      <workItem from="1744661697397" duration="23000" />
+      <workItem from="1744663307934" duration="19000" />
+      <workItem from="1744663409078" duration="89000" />
+      <workItem from="1744663520539" duration="732000" />
+      <workItem from="1744702528072" duration="5413000" />
+      <workItem from="1744716375254" duration="7000" />
+      <workItem from="1744721976579" duration="3027000" />
+      <workItem from="1744736555616" duration="514000" />
+      <workItem from="1744808474875" duration="5821000" />
+      <workItem from="1745070081018" duration="1457000" />
+      <workItem from="1745150572443" duration="3181000" />
+      <workItem from="1745153886898" duration="2983000" />
+      <workItem from="1745171910061" duration="776000" />
+      <workItem from="1745226665164" duration="1033000" />
+      <workItem from="1745866548457" duration="3390000" />
+      <workItem from="1745922915389" duration="5129000" />
+      <workItem from="1745951580849" duration="16000" />
+      <workItem from="1746094397203" duration="1518000" />
+      <workItem from="1746100093175" duration="8197000" />
+      <workItem from="1746124949308" duration="5534000" />
+      <workItem from="1746183023402" duration="1364000" />
+      <workItem from="1746475198380" duration="861000" />
+      <workItem from="1746530288718" duration="5914000" />
+      <workItem from="1746701998657" duration="21000" />
+      <workItem from="1746702269757" duration="490000" />
+      <workItem from="1746876286872" duration="13759000" />
+      <workItem from="1747059542001" duration="3594000" />
+      <workItem from="1747087204174" duration="1020000" />
+      <workItem from="1747156024692" duration="16128000" />
+      <workItem from="1747254022491" duration="5718000" />
+      <workItem from="1747305789278" duration="24000" />
+      <workItem from="1747312186393" duration="1042000" />
+      <workItem from="1747431484507" duration="101000" />
+      <workItem from="1747742018263" duration="2494000" />
+      <workItem from="1747854222696" duration="1713000" />
+      <workItem from="1748006084264" duration="822000" />
+      <workItem from="1748203449468" duration="900000" />
+      <workItem from="1748242089953" duration="1276000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.security:spring-security-core" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-websocket" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
+    <option featureType="dependencySupport" implementationName="java:org.openjfx:javafx-base" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.data:spring-data-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-messaging" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/FactoryMethodImpl/VideoPlayerFactory.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neetflex/patterns/adapter/ContentProviderLocal.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.example.neetflex.model.user.Playback" memberName="contents" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="contentList" />
+        <watch expression="playback" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
