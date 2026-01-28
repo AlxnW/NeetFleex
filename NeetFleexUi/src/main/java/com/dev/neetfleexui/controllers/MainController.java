@@ -5,7 +5,9 @@ import com.dev.neetfleexui.dto.ContentDto;
 import com.dev.neetfleexui.dto.ContentType;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import javafx.animation.FadeTransition;
 import javafx.animation.ScaleTransition;
+import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener; // Ensure this is imported
 import javafx.event.ActionEvent;
@@ -288,27 +290,45 @@ public class MainController {
         // List is assumed to contain only valid DTOs due to filtering in fetch method
         if (contentList == null || contentList.isEmpty()) {
             LOGGER.log(Level.INFO, "{0} list is null or empty after filtering. Container will be empty.", sectionDescription);
-            // Optionally add a placeholder label here if desired
-            // Label placeholder = new Label("No " + sectionDescription + " available.");
-            // placeholder.setTextFill(Color.GREY);
-            // container.getChildren().add(placeholder);
             return;
         }
 
         LOGGER.info("Populating UI section: " + sectionDescription + " with " + contentList.size() + " items...");
 
+        int index = 0;
         for (ContentDto content : contentList) {
-            // Content is assumed valid here, but a try-catch for card creation is still good practice
             try {
-                VBox contentCard = createContentCard(content); // Create card for the valid content
-                if (contentCard != null) { // Should not be null if content is valid, but check anyway
+                VBox contentCard = createContentCard(content); // Create card
+                if (contentCard != null) {
+                    // --- Entrance Animation Setup ---
+                    // Initial state: transparent and slightly pushed down
+                    contentCard.setOpacity(0.0);
+                    contentCard.setTranslateY(20.0);
+
                     container.getChildren().add(contentCard);
-                    // Spacing is handled by the HBox's 'spacing' property set in initialize()
+
+                    // Create Fade In + Slide Up animation
+                    FadeTransition fade = new FadeTransition(Duration.millis(500), contentCard);
+                    fade.setFromValue(0.0);
+                    fade.setToValue(1.0);
+
+                    TranslateTransition slide = new TranslateTransition(Duration.millis(500), contentCard);
+                    slide.setFromY(20.0);
+                    slide.setToY(0.0);
+
+                    // Delay based on index to create staggered effect
+                    double delay = index * 50; // 50ms delay per item
+                    fade.setDelay(Duration.millis(delay));
+                    slide.setDelay(Duration.millis(delay));
+
+                    // Play animations
+                    fade.play();
+                    slide.play();
+
+                    index++;
                 }
             } catch (Exception e) {
-                // Log error creating the card itself (layout issues, etc.)
-                LOGGER.log(Level.SEVERE, "Error creating UI card VBox for content: " + content.getTitle() + " in section " + sectionDescription, e);
-                // Skip this card and continue with others
+                LOGGER.log(Level.SEVERE, "Error creating UI card VBox for content: " + content.getTitle(), e);
             }
         }
         LOGGER.info("Finished populating UI section: " + sectionDescription);
@@ -389,7 +409,7 @@ public class MainController {
         card.setOnMouseEntered(e -> {
             scaleIn.play();
             // Apply glow on top of existing effect
-            glow.setInput(imageView.getEffect());
+            glow.setInput(dropShadow); // Ensure glow wraps the shadow
             imageView.setEffect(glow);
             glow.setLevel(0.3); // Make glow visible
             card.setCursor(Cursor.HAND);
@@ -398,11 +418,7 @@ public class MainController {
         card.setOnMouseExited(e -> {
             scaleOut.play();
             // Restore the effect that was present before glow was added
-            if (glow.getInput() != null) {
-                imageView.setEffect(glow.getInput());
-            } else {
-                imageView.setEffect(dropShadow); // Fallback to just shadow if input was null
-            }
+            imageView.setEffect(dropShadow); // Fallback to just shadow
             glow.setLevel(0.0); // Ensure glow is turned off
             card.setCursor(Cursor.DEFAULT);
         });

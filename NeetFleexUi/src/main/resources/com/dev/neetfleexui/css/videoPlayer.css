@@ -1,257 +1,209 @@
 /* --- Global --- */
 .video-player-root {
-    -fx-background-color: #101010;
-    -fx-font-family: "System";
+    -fx-background-color: black;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
 }
 
 /* --- Video Area --- */
 .video-container {
     -fx-background-color: black;
+    -fx-alignment: center;
 }
 
 /* --- Overlay --- */
 .overlay-pane {
     -fx-opacity: 0.0; /* Start hidden */
-    -fx-background-color: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, transparent 25%, transparent 75%, rgba(0,0,0,0.85) 100%);
+    /* Gradient overlay: Darker at bottom for controls, top for title, clear in center */
+    -fx-background-color: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 20%, transparent 70%, rgba(0,0,0,0.9) 100%);
 }
 
 .overlay-top {
-    /* Optional */
+    -fx-padding: 20px 30px;
 }
 
 .video-title {
-    -fx-font-size: 20px;
+    -fx-font-size: 24px;
     -fx-font-weight: bold;
-    -fx-text-fill: rgba(255, 255, 255, 0.9);
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 15, 0.6, 0, 1);
+    -fx-text-fill: #e5e5e5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.9), 10, 0.5, 0, 0);
 }
 
 /* --- Controls Container --- */
 .controls-container {
-    /* Background handled by overlay-pane */
+    -fx-padding: 0 0 20px 0; /* Lift up slightly */
 }
 
 /* --- Progress Bar --- */
 .progress-bar-container {
-    -fx-padding: 0 15px 8px 15px;
+    -fx-padding: 0 30px 10px 30px;
 }
 
 .video-progress {
-    -fx-pref-height: 6px;
-    -fx-accent: #E50914;
+    -fx-pref-height: 8px; /* Slightly thicker */
     -fx-cursor: hand;
-    -fx-background-radius: 3px;
+    -fx-background-color: transparent;
 }
 
 .video-progress .track {
     -fx-background-color: rgba(255, 255, 255, 0.2);
-    -fx-background-radius: 3px;
-    -fx-background-insets: 0;
+    -fx-background-radius: 4px;
+    -fx-background-insets: 2px;
 }
 
 .video-progress .bar {
-    -fx-background-radius: 3px;
-    -fx-background-insets: 0;
-    -fx-padding: 0;
-    -fx-effect: dropshadow(gaussian, rgba(229, 9, 20, 0.5), 5, 0.0, 0, 0);
+    -fx-background-color: #E50914; /* Netflix Red */
+    -fx-background-radius: 4px;
+    -fx-background-insets: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(229, 9, 20, 0.6), 8, 0.2, 0, 0); /* Red Glow */
 }
 
 /* --- Control Bar --- */
 .control-bar {
-    /* Padding set in FXML */
+    -fx-padding: 0 30px;
+    -fx-alignment: center-left;
+    -fx-spacing: 20px;
 }
 
 /* --- Buttons --- */
 .control-button {
-    -fx-background-radius: 50%;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
     -fx-min-width: 40px;
     -fx-min-height: 40px;
     -fx-max-width: 40px;
     -fx-max-height: 40px;
-    -fx-cursor: hand;
-    -fx-border-color: transparent;
-    -fx-border-width: 0;
     -fx-padding: 0;
-    -fx-alignment: center;
-
-    /* Transparent container background */
-    -fx-background-color: transparent;
-
-    /* Transition for hover effect (applied to container background) */
-    -fx-transition-property: -fx-background-color, transform;
-    -fx-transition-duration: 0.2s;
-    -fx-transition-timing-function: ease-in-out;
+    -fx-background-radius: 50%;
+    -fx-transition: all 0.2s ease-in-out;
 }
 
 .control-button:hover {
-    /* Change the container's background on hover */
-    -fx-background-color: rgba(255, 255, 255, 0.15);
-    -fx-scale-x: 1.05;
-    -fx-scale-y: 1.05;
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
 }
 
 .control-button:pressed {
-    /* Change the container's background on press */
-    -fx-background-color: rgba(255, 255, 255, 0.25);
-    -fx-scale-x: 1.0;
-    -fx-scale-y: 1.0;
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
 }
 
-/* --- Specific Button Icon Colors --- */
-/* Apply the icon color as the -fx-background-color FOR THE SHAPE */
-/* JavaFX uses this color to render the -fx-shape */
-/* *** THIS IS THE KEY FIX FOR VISIBILITY *** */
-
+/* --- Button Icons (SVG Shapes) --- */
 .play-button {
-    -fx-shape: "M 15 12 L 15 28 L 28 20 Z";
-    -fx-background-color: white; /* DEFAULT ICON COLOR */
+    -fx-shape: "M 12 10 L 12 30 L 28 20 Z";
+    -fx-background-color: white;
 }
-/* Layer hover/pressed background ON TOP of the icon color */
-.play-button:hover { -fx-background-color: white, rgba(255, 255, 255, 0.15); }
-.play-button:pressed { -fx-background-color: white, rgba(255, 255, 255, 0.25); }
-
 .pause-button {
-    -fx-shape: "M 14 12 H 18 V 28 H 14 Z M 22 12 H 26 V 28 H 22 Z";
-    -fx-background-color: white; /* ICON COLOR */
+    -fx-shape: "M 12 10 H 17 V 30 H 12 Z M 23 10 H 28 V 30 H 23 Z";
+    -fx-background-color: white;
 }
-.pause-button:hover { -fx-background-color: white, rgba(255, 255, 255, 0.15); }
-.pause-button:pressed { -fx-background-color: white, rgba(255, 255, 255, 0.25); }
-
 .stop-button {
-    -fx-shape: "M 13 13 H 27 V 27 H 13 Z";
-    -fx-background-color: white; /* ICON COLOR */
+    -fx-shape: "M 12 12 H 28 V 28 H 12 Z";
+    -fx-background-color: white;
 }
-.stop-button:hover { -fx-background-color: white, rgba(255, 255, 255, 0.15); }
-.stop-button:pressed { -fx-background-color: white, rgba(255, 255, 255, 0.25); }
-
 .volume-button {
-    -fx-shape: "M 12 16 L 16 16 L 22 10 L 22 30 L 16 24 L 12 24 Z M 25 14 Q 29 20 25 26";
-    -fx-background-color: white; /* ICON COLOR */
+    -fx-shape: "M 11 15 L 15 15 L 20 10 V 30 L 15 25 L 11 25 Z M 24 14 Q 28 20 24 26";
+    -fx-background-color: white;
 }
-.volume-button:hover { -fx-background-color: white, rgba(255, 255, 255, 0.15); }
-.volume-button:pressed { -fx-background-color: white, rgba(255, 255, 255, 0.25); }
-
 .mute-button {
-    -fx-shape: "M 12 16 L 16 16 L 22 10 L 22 30 L 16 24 L 12 24 Z M 25 16 L 30 21 M 25 21 L 30 16";
-    -fx-background-color: white; /* ICON COLOR */
+    -fx-shape: "M 11 15 L 15 15 L 20 10 V 30 L 15 25 L 11 25 Z M 23 15 L 28 20 M 23 20 L 28 15";
+    -fx-background-color: white;
 }
-.mute-button:hover { -fx-background-color: white, rgba(255, 255, 255, 0.15); }
-.mute-button:pressed { -fx-background-color: white, rgba(255, 255, 255, 0.25); }
-
 .fullscreen-button {
-    -fx-shape: "M 12 12 H 16 V 16 H 12 Z M 12 24 H 16 V 28 H 12 Z M 24 12 H 28 V 16 H 24 Z M 24 24 H 28 V 28 H 24 Z M 16 14 V 12 H 24 V 14 Z M 16 26 V 28 H 24 V 26 Z M 14 16 H 12 V 24 H 14 Z M 26 16 H 28 V 24 H 26 Z";
-    -fx-background-color: white; /* ICON COLOR */
+    -fx-shape: "M 10 10 H 15 V 12 H 12 V 15 H 10 Z M 10 30 H 15 V 28 H 12 V 25 H 10 Z M 30 10 H 25 V 12 H 28 V 15 H 30 Z M 30 30 H 25 V 28 H 28 V 25 H 30 Z";
+    -fx-background-color: white;
 }
-.fullscreen-button:hover { -fx-background-color: white, rgba(255, 255, 255, 0.15); }
-.fullscreen-button:pressed { -fx-background-color: white, rgba(255, 255, 255, 0.25); }
+/* New Exit Fullscreen Icon */
+.fullscreen-exit-icon {
+     -fx-shape: "M 14 14 H 10 V 16 H 16 V 10 H 14 Z M 14 26 H 10 V 24 H 16 V 30 H 14 Z M 26 14 H 30 V 16 H 24 V 10 H 26 Z M 26 26 H 30 V 24 H 24 V 30 H 26 Z";
+     -fx-background-color: white;
+}
 
 /* --- Time Label --- */
 .time-label {
-    -fx-text-fill: rgba(255, 255, 255, 0.85);
-    -fx-font-size: 13px;
-    -fx-padding: 0 5px;
+    -fx-text-fill: #b3b3b3;
+    -fx-font-size: 14px;
+    -fx-font-family: "Consolas", monospace;
+    -fx-padding: 0 10px;
 }
 
 /* --- Volume Slider --- */
-.volume-control-group { }
+.volume-control-group {
+    -fx-alignment: center;
+    -fx-spacing: 5px;
+}
 
 .volume-slider {
     -fx-min-width: 80px;
     -fx-max-width: 100px;
-    -fx-padding: 8px 0;
+    -fx-cursor: hand;
 }
 
 .volume-slider .track {
-    /* Basic track appearance - the gradient fill will be handled by controller */
     -fx-background-color: rgba(255, 255, 255, 0.2);
     -fx-pref-height: 4px;
     -fx-background-radius: 2px;
 }
-
-/* REMOVED the problematic linear-gradient using var() from CSS */
-/* .volume-slider > .track { ... } */
 
 .volume-slider .thumb {
     -fx-background-color: white;
     -fx-pref-height: 12px;
     -fx-pref-width: 12px;
     -fx-background-radius: 50%;
-    -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.0, 0, 1);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 3, 0, 0, 1);
+    -fx-transition: -fx-scale-x 0.2s, -fx-scale-y 0.2s;
 }
 
-/* REMOVED :root and :lookup references */
-/* :root { --progress-percent: 0%; } */
-/* .volume-slider:lookup(".track") { ... } */
-
+.volume-slider:hover .thumb {
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+}
 
 /* --- Quality Selector --- */
 .quality-selector {
-    -fx-background-color: rgba(255, 255, 255, 0.1);
-    -fx-border-color: rgba(255, 255, 255, 0.2);
-    -fx-border-radius: 4px;
-    -fx-background-radius: 4px;
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-border-radius: 2px;
     -fx-text-fill: white;
     -fx-font-size: 12px;
-    -fx-padding: 3px 6px;
+    -fx-padding: 0 5px;
     -fx-cursor: hand;
 }
 
 .quality-selector:hover {
-    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-border-color: white;
+    -fx-background-color: rgba(0, 0, 0, 0.7);
 }
-
+.quality-selector .arrow-button {
+    -fx-padding: 0 5px;
+}
 .quality-selector .arrow {
     -fx-background-color: white;
-    -fx-padding: 4px;
+    -fx-padding: 2px 3px;
 }
 
-.quality-selector .list-cell {
-    -fx-background-color: #202020;
-    -fx-text-fill: rgba(255, 255, 255, 0.9);
-    -fx-padding: 6px 12px;
-    -fx-font-size: 12px;
-}
-.quality-selector .list-cell:hover {
-    -fx-background-color: #E50914;
-    -fx-text-fill: white;
-}
-
-.quality-selector .list-view {
-    -fx-background-color: #202020;
-    -fx-border-color: rgba(255, 255, 255, 0.2);
-    -fx-background-insets: 0;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.0, 0, 2);
-}
-
-
-
+/* --- Close Button --- */
 .close-button {
-    /* X shape using a fillable path */
-    -fx-shape: "M10,10 L13,10 L16,13 L19,10 L22,10 L22,13 L19,16 L22,19 L22,22 L19,22 L16,19 L13,22 L10,22 L10,19 L13,16 L10,13 Z";
-
-    /* White fill color */
-    -fx-background-color: white;
+    -fx-shape: "M 10 10 L 30 30 M 30 10 L 10 30"; /* Simple Cross */
+    -fx-background-color: rgba(255, 255, 255, 0.7);
+    -fx-min-width: 30px;
+    -fx-min-height: 30px;
+    -fx-max-width: 30px;
+    -fx-max-height: 30px;
+    -fx-background-radius: 50%;
     -fx-cursor: hand;
-
-    /* Size */
-    -fx-min-width: 32px;
-    -fx-min-height: 32px;
-    -fx-max-width: 32px;
-    -fx-max-height: 32px;
-
-    /* Essential rendering settings */
-    -fx-padding: 0;
-    -fx-background-insets: 0;
-    -fx-scale-shape: true;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 5, 0, 0, 1);
+    -fx-transition: all 0.2s;
 }
 
-/* Hover effect */
 .close-button:hover {
-    -fx-background-color: #ff5555;
+    -fx-background-color: white;
+    -fx-rotate: 90; /* Nice spin effect on hover */
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
 }
 
-/* Pressed effect */
-.close-button:pressed {
-    -fx-background-color: #cc0000;
+.close-button .image-view {
+    -fx-opacity: 0; /* Hide default image if any */
 }

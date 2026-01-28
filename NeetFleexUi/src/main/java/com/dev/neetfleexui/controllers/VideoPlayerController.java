@@ -1,7 +1,9 @@
 package com.dev.neetfleexui.controllers; // Make sure this matches your package structure
 
 import javafx.animation.FadeTransition;
+import javafx.animation.ParallelTransition;
 import javafx.animation.PauseTransition;
+import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
@@ -72,12 +74,13 @@ public class VideoPlayerController {
     private volatile long currentMediaLength = -1; // Use volatile
 
     // --- Overlay Visibility ---
-    private FadeTransition fadeInTransition;
-    private FadeTransition fadeOutTransition;
+    private ParallelTransition fadeInTransition;
+    private ParallelTransition fadeOutTransition;
     private PauseTransition hideDelay;
     private boolean controlsVisible = false;
     private static final Duration FADE_DURATION = Duration.millis(300);
     private static final Duration HIDE_DELAY_DURATION = Duration.seconds(3);
+    private static final double SLIDE_OFFSET = 30.0; // Pixels to slide up/down
 
     // --- Fullscreen ---
     private Stage stage;
@@ -773,23 +776,35 @@ public class VideoPlayerController {
     private void setupOverlayVisibility() {
         if (overlayPane == null || videoPlayerRoot == null) return;
 
-        // Fade In Transition
-        fadeInTransition = new FadeTransition(FADE_DURATION, overlayPane);
-        fadeInTransition.setFromValue(0.0);
-        fadeInTransition.setToValue(1.0);
+        // --- Fade In (Parallel: Fade In + Slide Up) ---
+        FadeTransition fadeIn = new FadeTransition(FADE_DURATION, overlayPane);
+        fadeIn.setFromValue(0.0);
+        fadeIn.setToValue(1.0);
+
+        TranslateTransition slideUp = new TranslateTransition(FADE_DURATION, overlayPane);
+        slideUp.setFromY(SLIDE_OFFSET);
+        slideUp.setToY(0.0);
+
+        fadeInTransition = new ParallelTransition(fadeIn, slideUp);
         fadeInTransition.setOnFinished(e -> {
-            overlayPane.setMouseTransparent(false); // Allow interaction when visible
+            overlayPane.setMouseTransparent(false);
             overlayPane.setPickOnBounds(true);
             controlsVisible = true;
-            resetHideTimer(); // Start timer to hide again after appearing
+            resetHideTimer();
         });
 
-        // Fade Out Transition
-        fadeOutTransition = new FadeTransition(FADE_DURATION, overlayPane);
-        fadeOutTransition.setFromValue(1.0);
-        fadeOutTransition.setToValue(0.0);
+        // --- Fade Out (Parallel: Fade Out + Slide Down) ---
+        FadeTransition fadeOut = new FadeTransition(FADE_DURATION, overlayPane);
+        fadeOut.setFromValue(1.0);
+        fadeOut.setToValue(0.0);
+
+        TranslateTransition slideDown = new TranslateTransition(FADE_DURATION, overlayPane);
+        slideDown.setFromY(0.0);
+        slideDown.setToY(SLIDE_OFFSET);
+
+        fadeOutTransition = new ParallelTransition(fadeOut, slideDown);
         fadeOutTransition.setOnFinished(e -> {
-            overlayPane.setMouseTransparent(true); // Prevent interaction when invisible
+            overlayPane.setMouseTransparent(true);
             overlayPane.setPickOnBounds(false);
             controlsVisible = false;
         });
@@ -797,18 +812,17 @@ public class VideoPlayerController {
         // Pause before hiding
         hideDelay = new PauseTransition(HIDE_DELAY_DURATION);
         hideDelay.setOnFinished(event -> {
-            // Only hide if playing, controls are visible, and mouse isn't over player/controls
             boolean actuallyPlaying = isPlaying && embeddedMediaPlayer != null && embeddedMediaPlayer.status().isPlaying();
             if (actuallyPlaying && controlsVisible && !isMouseOverPlayer()) {
                 hideControls();
             } else if (actuallyPlaying && controlsVisible) {
-                resetHideTimer(); // Mouse is still over, reset timer
+                resetHideTimer();
             }
         });
 
         // Show controls when mouse enters the player area
         videoPlayerRoot.setOnMouseEntered(event -> {
-            if (embeddedMediaPlayer != null) { // Only show if player exists
+            if (embeddedMediaPlayer != null) {
                 showControls();
             }
         });
@@ -817,9 +831,9 @@ public class VideoPlayerController {
         videoPlayerRoot.setOnMouseMoved(event -> {
             if (embeddedMediaPlayer != null) {
                 if (!controlsVisible) {
-                    showControls(); // Show if hidden
+                    showControls();
                 } else {
-                    resetHideTimer(); // Reset timer if already shown
+                    resetHideTimer();
                 }
             }
         });
@@ -829,10 +843,8 @@ public class VideoPlayerController {
             startHideTimer();
         });
 
-        // Prevent hiding if mouse is over the overlay itself (controls)
         overlayPane.addEventFilter(MouseEvent.MOUSE_ENTERED, event -> resetHideTimer());
         overlayPane.addEventFilter(MouseEvent.MOUSE_MOVED, event -> resetHideTimer());
-        // No need for ANY filter, specific entry/move is enough
     }
 
     // Helper to check if mouse is over the root or the overlay
@@ -850,6 +862,7 @@ public class VideoPlayerController {
             fadeOutTransition.stop();
             fadeInTransition.stop();
             overlayPane.setOpacity(1.0);
+            overlayPane.setTranslateY(0.0); // Reset translation
             overlayPane.setMouseTransparent(false);
             overlayPane.setPickOnBounds(true);
             controlsVisible = true;
